@@ -27,13 +27,13 @@ export const ImageHandler = {
     loadImages(){
         return ImageService.getImages();
     },
-    loadImage(id) {
-        return ImageService.getImage(id);
+    loadImage(imageName) {
+        return ImageService.getImage(imageName);
     },
     deleteImage(id){
         return ImageService.deleteImage(id);
     },
-    updateImage(id, updatedImage){
+    updateImage(imageName, updatedImage){
         // if (!updatedProduct) {
         //     return;
         // }
@@ -44,15 +44,15 @@ export const ImageHandler = {
             "category": updatedImage.category,
         }
 
-        return ImageService.updateImage(id, updatedImageStructure);
+        return ImageService.updateImage(imageName, updatedImageStructure);
     },
-    async fetchProducts() {
-        const products = await ProductHandler.loadProducts();
-        return { products };
+    async fetchImages() {
+        const images = await ImageHandler.loadImages();
+        return { images };
     },
-    async fetchProduct({ params }) {
-        const product = await ProductHandler.loadProduct(params.id);
-        return { product };
+    async fetchImage({ params }) {
+        const image = await ImageHandler.loadImage(params. imageName);
+        return { image };
     },
 }
 

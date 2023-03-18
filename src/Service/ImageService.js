@@ -15,8 +15,8 @@ const apiClient = axios.create({
         let allImages = response.data;
         return allImages;
     },
-    async getImage(id) {
-        let response = await apiClient.get("/Image/" + id);
+    async getImage(imageName) {
+        let response = await apiClient.get("/Image/GetImageByName?imageName="+ imageName);
         let image = response.data;
         return image;
     },
@@ -26,8 +26,8 @@ const apiClient = axios.create({
     async deleteImage(id){
         axios.delete('https://localhost:7200/Image/Delete?Id=' + id)
     },
-    async updateImage(id, updatedImage){
-        await apiClient.patch("/Image/" + id, updatedImage)
+    async updateImage(imageName, updatedImage){
+        await apiClient.patch("/Image/" + imageName, updatedImage)
     }
 }
 
