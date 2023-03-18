@@ -15,10 +15,10 @@ const apiClient = axios.create({
         let allImages = response.data;
         return allImages;
     },
-    async getProduct(id) {
-        let response = await apiClient.get("/products/" + id);
-        let product = response.data;
-        return product;
+    async getImage(id) {
+        let response = await apiClient.get("/Image/" + id);
+        let image = response.data;
+        return image;
     },
     async submitImage(newImage){
         await apiClient.post("/Image/Post", newImage)
@@ -26,8 +26,8 @@ const apiClient = axios.create({
     async deleteImage(id){
         axios.delete('https://localhost:7200/Image/Delete?Id=' + id)
     },
-    async updateProduct(id, updatedProduct){
-        await apiClient.patch("/products/" + id, updatedProduct)
+    async updateImage(id, updatedImage){
+        await apiClient.patch("/Image/" + id, updatedImage)
     }
 }
 

@@ -27,30 +27,24 @@ export const ImageHandler = {
     loadImages(){
         return ImageService.getImages();
     },
-    loadProduct(id) {
-        return ProductService.getProduct(id);
+    loadImage(id) {
+        return ImageService.getImage(id);
     },
     deleteImage(id){
         return ImageService.deleteImage(id);
     },
-    updateProduct(id, updatedProduct){
-        if (!updatedProduct) {
-            return;
+    updateImage(id, updatedImage){
+        // if (!updatedProduct) {
+        //     return;
+        // }
+
+        let updatedImageStructure = {
+            "imageName": updatedImage.imageName,
+            "imageSource": updatedImage.imageSource,
+            "category": updatedImage.category,
         }
 
-        let updatedProductStructure = {
-            "name": updatedProduct.name,
-            "price": updatedProduct.price,
-            "img": updatedProduct.img,
-            "category": updatedProduct.category,
-            "productStatus": updatedProduct.productStatus,
-            "unit": updatedProduct.unit,
-            "description": updatedProduct.description,
-            "date": new Date(),
-            "id": updatedProduct.id
-        }
-
-        return ProductService.updateProduct(id, updatedProductStructure);
+        return ImageService.updateImage(id, updatedImageStructure);
     },
     async fetchProducts() {
         const products = await ProductHandler.loadProducts();
