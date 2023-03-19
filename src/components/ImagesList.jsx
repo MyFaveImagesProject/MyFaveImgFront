@@ -29,23 +29,19 @@ function ImagesList() {
   return (
 
     
-       <Row xs={1} md={2} lg={4} className="g-4">
-          {/* {Array.from({ length: 1 }).map((_, idx) => ( */}
-            <Col lg={4}> </Col>    
-            <Col lg={4}> </Col>
-            <Col lg={4}> </Col>
+       <Row style={{gap: 1, justifyContent:'space-evenly', paddingTop:'30px'}} xs={1} md={2} lg={5} className="g-4">
+            <Col style={{justifyContent:'space-evenly'}} xs={4} lg={4}> </Col>    
+
                 {
                   myImages.map(i => (
                   
                   
-                    <Card key={i.id} bg="secondary">
+                    <Card key={i.id} style={{backgroundColor:"beige"}}>
                     
-                    <Card.Img variant="top" src={i.imageSource} />
+                    <Card.Img variant="bottom" src={i.imageSource} />
                     <Card.Body>
                       <Card.Title>{i.imageName}</Card.Title>
                       <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
                       </Card.Text>
                       <Link to={`/editImage/${i.id}`} ><Button variant="primary">Edit</Button></Link>
                       <Button variant="primary" onClick={()=>deleteImage(i.id)}>Delete</Button>

@@ -39,7 +39,7 @@ const EditForm = () => {
                 <form onSubmit={handleSubmit}>
                   <fieldset>
                     <label htmlFor="id"></label>
-                    <input name="id" defaultValue={updatedImage.id} />
+                    <input name="id" type="hidden" defaultValue={updatedImage.id} />
       
                     <label htmlFor="imageName">Title</label>
                     <input onChange={handleFieldChange} name="imageName" defaultValue={updatedImage.imageName} />

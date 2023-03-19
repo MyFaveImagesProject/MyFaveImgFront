@@ -1,27 +1,26 @@
+import { Button, Form } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import UploadButton from './UploadButton';
+
 
 
 function myNavbar() {
   return (
     <>
 
-    <UploadButton />
-    <Navbar bg="light" expand="lg">
+    <Navbar style={{margin:"0 2.5rem 0 2.5rem", borderRadius:"0.625rem", border:"2px solid #d63384"}} bg='secondary' variant='dark' expand="lg">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="http://localhost:5173/">My Favourite Images</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="http://localhost:5173/uploadImage">Add image</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Another action
+                Search by...
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -31,6 +30,15 @@ function myNavbar() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-secondary">Search</Button>
+        </Form>
       </Container>
     </Navbar>
 

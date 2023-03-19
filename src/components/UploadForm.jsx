@@ -66,8 +66,8 @@ function UpLoadForm() {
 
         <fieldset>
 
-          <input id="ImageSource" placeholder='SELECT' type="file" onChange={handleImageChange} />
-          {/* <input id="ImageSource" placeholder='URL'{...register("ImageSource", { required: true })} /> */}
+          {/* <input id="ImageSource" placeholder='SELECT' onChange={handleImageChange} /> */}
+          <input id="ImageSource" onChange={handleImageChange} placeholder='URL'{...register("ImageSource", { required: true })} />
           {errors.ImageSource && <span>Debe rellenar este campo</span>}
 
           {/* <div id="term">
