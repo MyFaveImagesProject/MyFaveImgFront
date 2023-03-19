@@ -27,25 +27,25 @@ export const ImageHandler = {
     loadImages(){
         return ImageService.getImages();
     },
-    loadImage(imageName) {
-        return ImageService.getImage(imageName);
+    loadImage(id) {
+        return ImageService.getImage(id);
     },
     deleteImage(id){
         return ImageService.deleteImage(id);
     },
-    updateImage(updatedImage){
+    updateImage(id, updatedData){
         // if (!updatedProduct) {
         //     return;
         // }
 
         let updatedImageStructure = {
-            "imageName": updatedImage.imageName,
-            "imageSource": updatedImage.imageSource,
-            "category": updatedImage.category,
-            "id":updatedImage.id,
+            "imageName": updatedData.imageName,
+            "imageSource": updatedData.imageSource,
+            "category": updatedData.category,
+            "id":updatedData.id,
         }
 
-        return ImageService.updateImage(updatedImageStructure);
+        return ImageService.updateImage(id, updatedImageStructure);
     },
     async fetchImages() {
         const images = await ImageHandler.loadImages();

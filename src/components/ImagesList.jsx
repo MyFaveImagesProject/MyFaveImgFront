@@ -47,7 +47,7 @@ function ImagesList() {
                         Some quick example text to build on the card title and make up the
                         bulk of the card's content.
                       </Card.Text>
-                      <Link to={`/editImage/${i.imageName}`} ><Button variant="primary">Edit</Button></Link>
+                      <Link to={`/editImage/${i.id}`} ><Button variant="primary">Edit</Button></Link>
                       <Button variant="primary" onClick={()=>deleteImage(i.id)}>Delete</Button>
                     </Card.Body>
                     </Card>

@@ -1,32 +1,33 @@
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
-import { useLoaderData, useParams} from "react-router-dom";
-import ImageHandler from "../handler/ImageHandler";
-import { Link } from "react-router-dom";
+import { useLoaderData, useParams } from 'react-router-dom';
+import ImageHandler from '../handler/ImageHandler';
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 
 const EditForm = () => {
-    const { image } = useLoaderData();
-    console.log(image)
-    const [updatedImage, setUpdatedImage] = useState(image);
-    
-    const handleFieldChange = (event) => {
-      const { name, value } = event.target;
-      setUpdatedImage({
-        ...updatedImage,
-        [name]: value
-      });
-      console.log(image)
-      console.log(updatedImage)
-    };
+  const { image } = useLoaderData();
+  console.log(image);
+  const [updatedImage, setUpdatedImage] = useState(image[0]);
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      const updatedData = { ...image[0], ...updatedImage };
-      ImageHandler.updateImage(updatedData);
+  const handleFieldChange = (event) => {
+    const { name, value } = event.target;
+    setUpdatedImage({
+      ...updatedImage,
+      [name]: value,
+    });
+  };
+  
+  console.log(updatedImage)
 
-    };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const updatedData = { ...image, ...updatedImage };
+    const { id } = image[0];
+    ImageHandler.updateImage(id, updatedData);
+    console.log(id, updatedData)
+  };
 
 
     return (
