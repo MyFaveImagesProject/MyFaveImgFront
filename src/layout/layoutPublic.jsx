@@ -1,13 +1,14 @@
 import { Outlet, useNavigation } from "react-router-dom";
+import Navbar from "../components/myNavbar";
 
 
 const LayoutPublic = () => {
 
-    const navigation = useNavigation()
+    // const navigation = useNavigation()
 
     return (
         <>
-            {/* <Navbar /> */}
+            <Navbar />
             <Outlet />
             {/* <Footer /> */}
         </>

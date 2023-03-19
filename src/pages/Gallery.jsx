@@ -6,7 +6,7 @@ import UploadButton from '../components/UploadButton';
 const Gallery = () => { 
     return (
     <>
-    <UploadButton />
+    
     <ImagesList />
     </>
     )

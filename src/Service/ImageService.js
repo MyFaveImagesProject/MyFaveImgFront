@@ -9,7 +9,7 @@ const apiClient = axios.create({
     }
 })
 
- export const ProductService = {
+ export const ImageService = {
     async getImages() {
         let response = await apiClient.get("/Image/GetAll");
         let allImages = response.data;
@@ -26,9 +26,9 @@ const apiClient = axios.create({
     async deleteImage(id){
         axios.delete('https://localhost:7200/Image/Delete?Id=' + id)
     },
-    async updateImage(imageName, updatedImage){
-        await apiClient.patch("/Image/" + imageName, updatedImage)
+    async updateImage(updatedImage){
+        await apiClient.patch("/Image/Patch", updatedImage)
     }
 }
 
-export default ProductService
+export default ImageService

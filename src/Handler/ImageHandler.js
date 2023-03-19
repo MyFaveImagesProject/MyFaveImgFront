@@ -33,7 +33,7 @@ export const ImageHandler = {
     deleteImage(id){
         return ImageService.deleteImage(id);
     },
-    updateImage(imageName, updatedImage){
+    updateImage(updatedImage){
         // if (!updatedProduct) {
         //     return;
         // }
@@ -42,9 +42,10 @@ export const ImageHandler = {
             "imageName": updatedImage.imageName,
             "imageSource": updatedImage.imageSource,
             "category": updatedImage.category,
+            "id":updatedImage.id,
         }
 
-        return ImageService.updateImage(imageName, updatedImageStructure);
+        return ImageService.updateImage(updatedImageStructure);
     },
     async fetchImages() {
         const images = await ImageHandler.loadImages();
