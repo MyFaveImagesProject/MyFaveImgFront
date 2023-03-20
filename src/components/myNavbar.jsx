@@ -16,29 +16,12 @@ function myNavbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="http://localhost:5173/uploadImage">Add image</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Search by...
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+          <Nav.Link href="http://localhost:5173/home">Home</Nav.Link>
+          <Nav.Link href="http://localhost:5173/gallery">Gallery</Nav.Link>
+          <Nav.Link href="http://localhost:5173/uploadImage">Add Image</Nav.Link>
+          
           </Nav>
         </Navbar.Collapse>
-        <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-secondary">Search</Button>
-        </Form>
       </Container>
     </Navbar>
 

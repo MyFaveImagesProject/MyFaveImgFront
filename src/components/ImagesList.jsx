@@ -105,7 +105,7 @@ let myImages = images;
                         
                         <Card.Body >
                         <Card.ImgOverlay style={{margin: "-0.625", height:"5%"}}>
-                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.6", fontSize:"95%"}}>{i.imageName}</Card.Title>
+                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.7", fontSize:"100%"}}>{i.imageName}</Card.Title>
                           </Card.ImgOverlay>
                           </Card.Body>
                          
@@ -129,7 +129,7 @@ let myImages = images;
     <>
     <Row  style={{paddingTop:'1.875rem', paddingBottom:"1.875rem", paddingLeft: "2.5rem"}}>
     <Dropdown>
-        <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary" bg="secondary">
+        <Dropdown.Toggle style={{border:"2px solid #d63384"}} variant="secondary" bg="secondary">
           Category
         </Dropdown.Toggle>
 
@@ -169,7 +169,7 @@ let myImages = images;
                         
                         <Card.Body >
                         <Card.ImgOverlay style={{margin: "-0.625", height:"5%"}}>
-                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.6", fontSize:"95%"}}>{i.imageName}</Card.Title>
+                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.7", fontSize:"100%"}}>{i.imageName}</Card.Title>
                           </Card.ImgOverlay>
                           </Card.Body>
                          
