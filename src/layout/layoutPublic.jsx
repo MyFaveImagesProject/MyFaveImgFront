@@ -1,5 +1,5 @@
 import { Outlet, useNavigation } from "react-router-dom";
-import Navbar from "../components/myNavbar";
+import MyNavbar from "../components/MyNavbar";
 
 
 
@@ -11,7 +11,7 @@ const LayoutPublic = () => {
         <>
 
         
-        <Navbar />
+        <MyNavbar />
         <Outlet />
           
 

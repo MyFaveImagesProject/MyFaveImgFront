@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/myNavbar";
-import { Navbar } from "react-bootstrap";
+import MyNavbar from "../components/MyNavbar";
+
 
 
 
 function Root() {
     return (
         <>
-            <Navbar />
+            <MyNavbar />
             <Outlet />
         </>
     )

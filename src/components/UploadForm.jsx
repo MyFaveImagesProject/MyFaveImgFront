@@ -41,6 +41,75 @@ function UpLoadForm() {
 // const isActive = 1
 
   return (
+
+    <>
+
+    {image.map(i => (
+    
+    // rgba(255, 233, 246, 1)
+    
+      <Form style={{borderRadius:"0.625rem", border:"2px solid #d63384", height:"80%", width:"80%", marginTop:"10%", marginLeft:"10%"}} onSubmit={handleSubmit}>
+      <h2 style={{backgroundColor:"rgba(153, 153, 153, 1)", borderRadius:"0.625rem", border:"2px solid #d63384"}}>Editing {i.imageName} </h2>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label htmlFor="id"></Form.Label>
+            <Form.Control type="hidden" defaultValue={updatedImage.id}/>
+          </Form.Group>
+    
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label htmlFor="imageName">Title</Form.Label>
+            <Form.Control style={{backgroundColor:"rgba(255, 233, 246, 1)",marginLeft:"10%", width:"80%"}} onChange={handleFieldChange} name="imageName" defaultValue={updatedImage.imageName} />
+          </Form.Group>
+    
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label htmlFor="category">Category</Form.Label>
+                        <select style={{borderRadius:"0.0625rem", backgroundColor:"rgba(255, 233, 246, 1)"}} onChange={handleFieldChange} name="category" defaultValue={updatedImage.category}>
+                          <option value="nature">Nature</option>
+                          <option value="society">Society</option>
+                          <option value="science">Science</option>
+                        </select>
+          </Form.Group>
+    
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label htmlFor="imageSource">Image Source</Form.Label>
+            <Form.Control style={{backgroundColor:"rgba(255, 233, 246, 1)", width:"80%",marginLeft:"10%"}} onChange={handleFieldChange} name="imageSource" defaultValue={updatedImage.imageSource} />
+          </Form.Group>
+    
+          <Button variant="secondary" type="submit" onClick={handleAddClick}>
+            Submit
+          </Button>
+    
+          <Link to="/" >
+          <Button variant='secondary' bg='dark' id="back" type="button" value="Back to Gallery">
+            Back to Gallery
+          </Button>
+          </Link>
+    
+          <Alert show={showAlert} variant="success" onClose={handleAlertClose} dismissible>
+                    <Alert.Heading>Image updated</Alert.Heading>
+                     <p>
+                       Enjoy your gallery
+                     </p>
+                     <hr />
+                     <div className="d-flex justify-content-end">
+                       <Button onClick={handleAlertClose} variant="outline-success">
+                         Close
+                       </Button>
+                     </div>
+                     </Alert>
+                </Form>
+    ))}
+    
+    
+    
+    
+            
+          
+                
+              
+          </>
+        );
+      };
+
     <form onSubmit={handleSubmit(onSubmit)} className="form">
       <fieldset>
 
