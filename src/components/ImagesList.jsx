@@ -101,7 +101,7 @@ let myImages = images;
                       
                         <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)"}} >
                         
-                        <Card.Img variant="top" src={i.imageSource} style={{marginTop: "0.3125rem", }} />
+                        <Card.Img variant="top" src={i.imageSource} style={{marginTop: "0.3125rem", height: "100%"}} />
                         
                         <Card.Body >
                         <Card.ImgOverlay style={{margin: "-0.625", height:"5%"}}>
@@ -110,8 +110,8 @@ let myImages = images;
                           </Card.Body>
                          
                           <Card.Footer style={{display:"flex", flexDirection:"row",justifyContent:'space-evenly', alignContent:"flex-end"}}>
-                          <Link to={`/editImage/${i.id}`} ><Button variant="outline-light" size='sm'>Edit</Button></Link>
-                          <Button variant="outline-light" size='sm' onClick={()=>deleteImage(i.id)}>Delete</Button>
+                          <Link to={`/editImage/${i.id}`} ><Button variant="outline-dark" size='lg'>Edit</Button></Link>
+                          <Button variant="outline-dark" size='lg' onClick={()=>deleteImage(i.id)}>Delete</Button>
                           </Card.Footer>
                         </Card>
     
@@ -169,13 +169,13 @@ let myImages = images;
                         
                         <Card.Body >
                         <Card.ImgOverlay style={{margin: "-0.625", height:"5%"}}>
-                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.7", fontSize:"100%"}}>{i.imageName}</Card.Title>
+                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.7"}}>{i.imageName}</Card.Title>
                           </Card.ImgOverlay>
                           </Card.Body>
                          
                           <Card.Footer style={{display:"flex", flexDirection:"row",justifyContent:'space-evenly', alignContent:"flex-end"}}>
-                          <Link to={`/editImage/${i.id}`} ><Button variant="outline-light" size='sm'>Edit</Button></Link>
-                          <Button variant="outline-light" size='sm' onClick={()=>deleteImage(i.id)}>Delete</Button>
+                          <Link to={`/editImage/${i.id}`} ><Button variant="outline-dark" size='lg'>Edit</Button></Link>
+                          <Button variant="outline-dark" size='lg' onClick={()=>deleteImage(i.id)}>Delete</Button>
                           </Card.Footer>
                         </Card>
     

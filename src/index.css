@@ -3,6 +3,12 @@
   line-height: 1.5;
   font-weight: 400;
 
+ 
+  margin: 0 auto;
+ 
+  text-align: center;
+  background-color: black;
+
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -26,11 +32,11 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
   background-color: #ced4da;
-  padding-top: 30px;
+
 }
 
 

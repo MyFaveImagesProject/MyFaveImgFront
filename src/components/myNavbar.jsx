@@ -10,9 +10,9 @@ function myNavbar() {
   return (
     <>
 
-    <Navbar style={{margin:"0 2.5rem 0 2.5rem", borderRadius:"0.625rem", border:"2px solid #d63384"}} bg='secondary' variant='dark' expand="lg">
+    <Navbar style={{borderRadius:"0.625rem", border:"2px solid #d63384"}} bg='secondary' variant='dark' expand="lg">
       <Container>
-        <Navbar.Brand href="http://localhost:5173/">My Favourite Images</Navbar.Brand>
+        <Navbar.Brand href="http://localhost:5173/">My Fave Images</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
