@@ -42,7 +42,7 @@ const EditForm = () => {
 
 {image.map(i => (
 
-  <Form style={{borderRadius:"0.625rem", border:"2px solid #d63384", height:"80%", width:"80%", marginTop:"10%", marginLeft:"10%"}} onSubmit={handleSubmit}>
+  <Form style={{borderRadius:"0.625rem", border:"2px solid #d63384", height:"80%", width:"80%", marginTop:"10%", marginLeft:"10%", backgroundColor:"rgba(153, 153, 153, 0.7)"}} onSubmit={handleSubmit}>
   <h2 style={{backgroundColor:"rgba(153, 153, 153, 1)", borderRadius:"0.625rem", border:"2px solid #d63384"}}>Editing {i.imageName} </h2>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label htmlFor="id"></Form.Label>

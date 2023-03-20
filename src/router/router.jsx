@@ -25,6 +25,11 @@ export const router = createBrowserRouter([
                         element: <EditImage />,
                         loader: fetchImage,
                     },    
+                    // {
+                    //     path: '/detailview/:',
+                    //     element: <DetailImage />,
+                    //     loader: fetchImage,
+                    // },    
                 ]
             },
         ]

@@ -174,8 +174,9 @@ let myImages = images;
                           </Card.Body>
                          
                           <Card.Footer style={{display:"flex", flexDirection:"row",justifyContent:'space-evenly', alignContent:"flex-end"}}>
-                          <Link to={`/editImage/${i.id}`} ><Button variant="outline-dark" size='lg'>Edit</Button></Link>
-                          <Button variant="outline-dark" size='lg' onClick={()=>deleteImage(i.id)}>Delete</Button>
+                          <Link to={`/detai/${i.id}`} ><Button variant="outline-dark" size='md'>Edit</Button></Link>
+                          <Link to={`/editImage/${i.id}`} ><Button variant="outline-dark" size='md'>Edit</Button></Link>
+                          <Button variant="outline-dark" size='md' onClick={()=>deleteImage(i.id)}>Delete</Button>
                           </Card.Footer>
                         </Card>
     
