@@ -62,48 +62,53 @@ let myImages = images;
   if(searchValues.length !== 0){
 
    return (
-    <Row style={{gap: 0.5, flexDirection:"row-reverse" ,justifyContent:'space-evenly', paddingTop:'30px'}} xs={1} md={2} lg={4} className="g-4"> 
-
-
-      <Dropdown>
-        <Dropdown.Toggle id="dropdown-button-dark-example1" variant="dark">
+    <>
+    <Row  style={{paddingTop:'1.875rem', paddingBottom:"1.875rem", paddingLeft: "2.5rem"}}>
+    <Dropdown>
+        <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary" bg="secondary">
           Category
         </Dropdown.Toggle>
 
-        <Dropdown.Menu variant="dark">
-        <ToggleButtonGroup type="checkbox" variant="dark" >
-      <ToggleButton id="tbg-btn-1" value={"society"} onChange={handleCheckBox}>
-        Option 1
+        <Dropdown.Menu variant='dark' style={{backgroundColor:"dimgrey"}}>
+        <ToggleButtonGroup type="checkbox" variant="light" style={{justifyContent:"space-evenly"}} >
+      <ToggleButton id="tbg-btn-1" variant='ligth' value={"society"} onChange={handleCheckBox} style={{backgroundColor:"palevioletred", width:"70%"}}>
+        Society
       </ToggleButton>
-      <ToggleButton id="tbg-btn-2" value={"science"} onChange={handleCheckBox}>
-        Option 2
+      <ToggleButton id="tbg-btn-2" variant='ligth' value={"science"} onChange={handleCheckBox} style={{backgroundColor:"palevioletred", width:"70%"}}>
+        Science
       </ToggleButton>
-      <ToggleButton id="tbg-btn-3" value={"nature"} onChange={handleCheckBox}>
-        Option 3
+      <ToggleButton id="tbg-btn-3" variant='ligth' value={"nature"} onChange={handleCheckBox} style={{backgroundColor:"palevioletred", width:"70%"}}>
+        Nature
       </ToggleButton>
     </ToggleButtonGroup>
 
         </Dropdown.Menu>
       </Dropdown>
+    </Row>
+    <Row style={{gap: 0.5, flexDirection:"row-reverse" ,justifyContent:'space-evenly', paddingTop:'2.5rem'}} xs={2} md={3} lg={4} className="g-4"> 
 
-        <Col style={{justifyContent:'space-evenly'}} xs={4} lg={3}> </Col>   
-        <Col style={{justifyContent:'space-evenly'}} xs={4} lg={3}> </Col>
-        <Col style={{justifyContent:'space-evenly'}} xs={4} lg={3}> </Col>
-        <Col style={{justifyContent:'space-evenly'}} xs={4} lg={3}> </Col> 
+
+
+
+        <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col>   
+        <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col>
+        <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col>
+        <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col> 
     
                     {
                       filteredImages.map(i => (
                       
                       
-                        <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)"}}>
+                        <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)"}} >
                         
                         <Card.Img variant="top" src={i.imageSource} style={{marginTop: "0.3125rem", }} />
-                        <Card.ImgOverlay style={{margin: "-10px", height:"1.875rem"}}>
-                        <Card.Body>
-                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.6"}}>{i.imageName} </Card.Title>
-    
-                          </Card.Body>
+                        
+                        <Card.Body >
+                        <Card.ImgOverlay style={{margin: "-0.625", height:"5%"}}>
+                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.6", fontSize:"95%"}}>{i.imageName}</Card.Title>
                           </Card.ImgOverlay>
+                          </Card.Body>
+                         
                           <Card.Footer style={{display:"flex", flexDirection:"row",justifyContent:'space-evenly', alignContent:"flex-end"}}>
                           <Link to={`/editImage/${i.id}`} ><Button variant="outline-light" size='sm'>Edit</Button></Link>
                           <Button variant="outline-light" size='sm' onClick={()=>deleteImage(i.id)}>Delete</Button>
@@ -118,67 +123,71 @@ let myImages = images;
                      
                   
                      </Row> 
+                     </>
    )
   } else return (
-
-     
-    <Row style={{gap: 0.5, flexDirection:"row-reverse" ,justifyContent:'space-evenly', paddingTop:'30px'}} xs={1} md={2} lg={4} className="g-4"> 
-
-
-
-      <Dropdown>
-        <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
+    <>
+    <Row  style={{paddingTop:'1.875rem', paddingBottom:"1.875rem", paddingLeft: "2.5rem"}}>
+    <Dropdown>
+        <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary" bg="secondary">
           Category
         </Dropdown.Toggle>
 
-        <Dropdown.Menu variant="dark">
-        <ToggleButtonGroup type="checkbox" variant="dark" >
-      <ToggleButton id="tbg-btn-1" value={"society"} onChange={handleCheckBox}>
-        Option 1
+        <Dropdown.Menu variant='dark' style={{backgroundColor:"dimgrey"}}>
+        <ToggleButtonGroup type="checkbox" variant="light" style={{justifyContent:"space-evenly"}} >
+      <ToggleButton id="tbg-btn-1" variant='ligth' value={"society"} onChange={handleCheckBox} style={{backgroundColor:"palevioletred", width:"70%"}}>
+        Society
       </ToggleButton>
-      <ToggleButton id="tbg-btn-2" value={"science"} onChange={handleCheckBox}>
-        Option 2
+      <ToggleButton id="tbg-btn-2" variant='ligth' value={"science"} onChange={handleCheckBox} style={{backgroundColor:"palevioletred", width:"70%"}}>
+        Science
       </ToggleButton>
-      <ToggleButton id="tbg-btn-3" value={"nature"} onChange={handleCheckBox}>
-        Option 3
+      <ToggleButton id="tbg-btn-3" variant='ligth' value={"nature"} onChange={handleCheckBox} style={{backgroundColor:"palevioletred", width:"70%"}}>
+        Nature
       </ToggleButton>
     </ToggleButtonGroup>
 
         </Dropdown.Menu>
       </Dropdown>
+    </Row>
+    <Row style={{gap: 0.5, flexDirection:"row-reverse" ,justifyContent:'space-evenly', paddingTop:'2.5rem'}} xs={2} md={3} lg={4} className="g-4"> 
 
-    <Col style={{justifyContent:'space-evenly'}} xs={4} lg={3}> </Col>   
-    <Col style={{justifyContent:'space-evenly'}} xs={4} lg={3}> </Col>
-    <Col style={{justifyContent:'space-evenly'}} xs={4} lg={3}> </Col>
-    <Col style={{justifyContent:'space-evenly'}} xs={4} lg={3}> </Col> 
 
-                {
-                  myImages.map(i => (
-                  
-                  
-                    <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)"}}>
-                    
-                    <Card.Img variant="top" src={i.imageSource} style={{marginTop: "0.3125rem", }} />
-                    <Card.ImgOverlay style={{margin: "-10px", height:"1.875rem"}}>
-                    <Card.Body>
-                      <Card.Title style={{backgroundColor:"rgba(233,236,239,0.6"}}>{i.imageName} </Card.Title>
 
-                      </Card.Body>
-                      </Card.ImgOverlay>
-                      <Card.Footer style={{display:"flex", flexDirection:"row",justifyContent:'space-evenly', alignContent:"flex-end"}}>
-                      <Link to={`/editImage/${i.id}`} ><Button variant="outline-light" size='sm'>Edit</Button></Link>
-                      <Button variant="outline-light" size='sm' onClick={()=>deleteImage(i.id)}>Delete</Button>
-                      </Card.Footer>
-                    </Card>
 
-                  
-                  
-                  ))
-                }
-          
-                 
+        <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col>   
+        <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col>
+        <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col>
+        <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col> 
+    
+                    {
+                      myImages.map(i => (
+                      
+                      
+                        <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)"}} >
+                        
+                        <Card.Img variant="top" src={i.imageSource} style={{marginTop: "0.3125rem", }} />
+                        
+                        <Card.Body >
+                        <Card.ImgOverlay style={{margin: "-0.625", height:"5%"}}>
+                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.6", fontSize:"95%"}}>{i.imageName}</Card.Title>
+                          </Card.ImgOverlay>
+                          </Card.Body>
+                         
+                          <Card.Footer style={{display:"flex", flexDirection:"row",justifyContent:'space-evenly', alignContent:"flex-end"}}>
+                          <Link to={`/editImage/${i.id}`} ><Button variant="outline-light" size='sm'>Edit</Button></Link>
+                          <Button variant="outline-light" size='sm' onClick={()=>deleteImage(i.id)}>Delete</Button>
+                          </Card.Footer>
+                        </Card>
+    
+                      
+                      
+                      ))
+                    }
               
-                 </Row> 
+                     
+                  
+                     </Row> 
+                     </>
   );
 }
 
