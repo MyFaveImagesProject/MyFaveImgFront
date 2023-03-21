@@ -10,14 +10,9 @@ const LayoutPublic = () => {
 
     return (
         <>
-
-        
-        <MyNavbar />
-        <Outlet />
-        <Footer />
-
-          
-
+            <MyNavbar />
+            <Outlet />
+            <Footer />
         </>
     );
 };

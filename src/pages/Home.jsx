@@ -11,8 +11,7 @@ const Home = () => {
 
     return (
     <>
-    
-    <MyCarousel />
+        <MyCarousel />
     </>
     )
 };

@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
 import ImageHandler from '../Handler/ImageHandler'
-import { purple, orange } from '@mui/material/colors';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Col, Row } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 

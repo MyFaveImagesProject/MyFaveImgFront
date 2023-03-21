@@ -6,23 +6,14 @@ export const ImageHandler = {
 
     addImage(newImage){
 
-        // if (!newImage) {
-        //     return;
-        // }
 
         let image = {
-
-            // "id":newImage.id,
             "imageName": newImage.imageName,  
-           
             "category": newImage.category,
             "ImageSource": newImage.ImageSource,
-            // "idWeb":newImage.idWeb,
-            // "insertDate": newImage.insertDate,
-            // "isActive": newImage.isActive
         }
         return ImageService.submitImage(image);
-        //return product;
+        
     },
     loadImages(){
         return ImageService.getImages();
@@ -34,9 +25,7 @@ export const ImageHandler = {
         return ImageService.deleteImage(id);
     },
     updateImage(id, updatedData){
-        // if (!updatedProduct) {
-        //     return;
-        // }
+
 
         let updatedImageStructure = {
             "imageName": updatedData.imageName,

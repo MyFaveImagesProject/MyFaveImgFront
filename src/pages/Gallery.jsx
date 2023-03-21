@@ -6,8 +6,7 @@ import ImagesList from '../components/ImagesList';
 const Gallery = () => { 
     return (
     <>
-    
-    <ImagesList />
+        <ImagesList />
     </>
     )
 };
