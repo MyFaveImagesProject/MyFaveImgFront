@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import MyNavbar from "../src/components/myNavbar";
 import '@testing-library/jest-dom'
 import UpLoadForm from "../src/components/UploadForm";
 

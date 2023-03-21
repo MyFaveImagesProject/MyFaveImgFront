@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import MyNavbar from "../src/components/myNavbar";
+import MyNavbar from "../src/components/MyNavbar";
 import '@testing-library/jest-dom'
 
 test('should render app title', () => { 

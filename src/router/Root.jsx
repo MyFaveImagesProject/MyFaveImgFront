@@ -9,6 +9,7 @@ function Root() {
         <>
             <MyNavbar />
             <Outlet />
+            <Footer />
         </>
     )
 }
