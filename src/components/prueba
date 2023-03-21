@@ -1,0 +1,50 @@
+  <form onSubmit={handleSubmit(onSubmit)} className="form">
+       <fieldset>
+         <input id="ImgName" placeholder='Title' {...register("imageName", { required: true })} />
+       {errors.ImgName && <span>This field must be filled</span>}
+       <select id="category" name="category" {...register("category", { required: true })}>
+       {errors.category && <span>This field must be filled</span>}
+       <option value="select">Category...</option>
+       <option value="nature">Nature</option>
+       <option value="society">Society</option>
+       <option value="science">Science</option>
+       </select>
+
+   
+
+
+
+
+        <fieldset>
+          {/* <input id="ImageSource" placeholder='SELECT' onChange={handleImageChange} /> */}
+          <input id="ImageSource" onChange={handleImageChange} placeholder='URL'{...register("ImageSource", { required: true })} />
+          {errors.ImageSource && <span>Debe rellenar este campo</span>}
+
+//           {/* <div id="term">
+          
+//           <input id="Terms" placeholder='terms' type="checkbox" value="checkbox" className="inline" {...register("terms", { required: true })} />
+//           {errors.terms && <span>Debe rellenar este campo</span>}
+//           <label>Acepto los términos y condiciones</label>
+//           </div> */}
+
+         </fieldset>
+       </fieldset>
+       <div id="buttons">
+       <input onClick={handleAddClick} id="submit" type="submit" value="GUARDAR" />
+       <input id="reset" type="reset" value="LIMPIAR" />
+       </div>
+       <Alert show={showAlert} variant="success" onClose={handleAlertClose} dismissible>
+         <Alert.Heading>Image Uploaded</Alert.Heading>
+         <p>
+           Enjoy your gallery!
+         </p>
+         <hr />
+         <div className="d-flex justify-content-end">
+           <Button onClick={handleAlertClose} variant="outline-success">
+             Cerrar
+           </Button>
+         </div>
+       </Alert>
+     </form>
+
+     </>
