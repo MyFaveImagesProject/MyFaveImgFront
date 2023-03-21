@@ -149,7 +149,7 @@ let myImages = images;
         </Dropdown.Menu>
       </Dropdown>
     </Row>
-    <Row style={{gap: 0.5, flexDirection:"row-reverse" ,justifyContent:'space-evenly', paddingTop:'2.5rem'}} xs={2} md={3} lg={4} className="g-4"> 
+    <Row style={{gap: 0.5, flexDirection:"revert" ,justifyContent:'space-evenly', paddingTop:'2.5rem'}} xs={2} md={3} lg={4} className="g-4"> 
 
 
 
@@ -157,7 +157,6 @@ let myImages = images;
         <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col>   
         <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col>
         <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col>
-        <Col style={{justifyContent:'space-evenly'}} xs={2} md={2} lg={3}> </Col> 
     
                     {
                       myImages.map(i => (
