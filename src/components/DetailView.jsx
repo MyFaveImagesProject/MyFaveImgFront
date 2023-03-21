@@ -57,8 +57,8 @@ export default function DetailView() {
       
               <Modal.Footer style={{backgroundColor:"rgba(135, 135, 135)"}}>
                 <Link to={`/editImage/${i.id}`}><Button variant="secondary" style={{backgroundColor:"#d63384"}}>Edit</Button></Link>
-                <Link to={"/"}><Button variant="secondary" style={{backgroundColor:"#d63384"}}>Gallery</Button></Link>
-                <Link to={"/"}><Button variant="secondary" style={{backgroundColor:"#d63384"}} onClick={()=>deleteImage(i.id)}>Delete</Button></Link>
+                <Link to={"/gallery"}><Button variant="secondary" style={{backgroundColor:"#d63384"}}>Gallery</Button></Link>
+                <Link to={"/gallery"}><Button variant="secondary" style={{backgroundColor:"#d63384"}} onClick={()=>deleteImage(i.id)}>Delete</Button></Link>
               </Modal.Footer>
             </Modal.Dialog>
           </div>
