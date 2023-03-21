@@ -6,12 +6,11 @@ import * as React from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
+
+
 export default function DetailView() {
   const {id} = useParams();
-  const [image, setImage] = useState([null])
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [image, setImage] = useState([])
 
 
   useEffect(() => {
@@ -22,35 +21,50 @@ export default function DetailView() {
     fetchImage();
   }, [id]);
 
-  if (!image) {
-    return <div>Loading...</div>;
-  }
-  
-  const { name, category, imageStatus, source}= image;
+  const deleteImage = async (id) => {
+    setImage(image.filter((i) => i.id !== id));
+    await ImageHandler.deleteImage(id);
+
+  };
+
 
   
+  // const { imageName, category, imageStatus, source}= image;
+  console.log(image)
 
-    return(
-        <>
-        <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
-        </Button>
-  
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
+  let imageLarge = image;
 
+        return(
+
+          <>
+          
+          {imageLarge.map(i =>(
+            <div
+            className="modal show"
+            style={{ display: 'block', position: 'initial', backgroundColor:"rgba(135, 135, 135, 0.5)"}}
+          >
+            <Modal.Dialog size='lg'>
+              <Modal.Header style={{backgroundColor:"rgba(135, 135, 135)"}}>
+                <Modal.Title style={{backgroundColor:"rgba(135, 135, 135)"}}>{i.imageName}</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <img src={i.imageSource} style={{height:"100%", width:"100%"}}/>
+              </Modal.Body>
+      
+              <Modal.Body>
+                <p>{i.category}</p>
+              </Modal.Body>
+      
+              <Modal.Footer style={{backgroundColor:"rgba(135, 135, 135)"}}>
+                <Link to={`/editImage/${i.id}`}><Button variant="secondary" style={{backgroundColor:"#d63384"}}>Edit</Button></Link>
+                <Link to={"/"}><Button variant="secondary" style={{backgroundColor:"#d63384"}}>Gallery</Button></Link>
+                <Link to={"/"}><Button variant="secondary" style={{backgroundColor:"#d63384"}} onClick={()=>deleteImage(i.id)}>Delete</Button></Link>
+              </Modal.Footer>
+            </Modal.Dialog>
+          </div>
+         ))}
+           
+
+            </>
     );
 }

@@ -1,50 +1,122 @@
-  <form onSubmit={handleSubmit(onSubmit)} className="form">
-       <fieldset>
-         <input id="ImgName" placeholder='Title' {...register("imageName", { required: true })} />
-       {errors.ImgName && <span>This field must be filled</span>}
-       <select id="category" name="category" {...register("category", { required: true })}>
-       {errors.category && <span>This field must be filled</span>}
-       <option value="select">Category...</option>
-       <option value="nature">Nature</option>
-       <option value="society">Society</option>
-       <option value="science">Science</option>
-       </select>
-
-   
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import ImageHandler from '../Handler/ImageHandler';
+import { Link } from 'react-router-dom';
+import * as React from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import { ModalBody } from 'react-bootstrap';
 
 
 
+export default function DetailView() {
+  const {id} = useParams();
+  const [image, setImage] = useState([null])
 
-        <fieldset>
-          {/* <input id="ImageSource" placeholder='SELECT' onChange={handleImageChange} /> */}
-          <input id="ImageSource" onChange={handleImageChange} placeholder='URL'{...register("ImageSource", { required: true })} />
-          {errors.ImageSource && <span>Debe rellenar este campo</span>}
+  const [show, setShow] = useState(false);
 
-//           {/* <div id="term">
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
+  useEffect(() => {
+    async function fetchImage() {
+      const imageData = await ImageHandler.loadImage(id);
+      setImage(imageData);
+    }
+    fetchImage();
+  }, [id]);
+
+  console.log(image)
+    
+
+  if (!image) {
+    return <div>Loading...</div>;
+  }
+  let imageLarge = image
+
+
+        return(
+        
+            <>
+
+         {imageLarge.map(i =>(
+            <div
+            className="modal show"
+            style={{ display: 'block', position: 'initial', backgroundColor:"rgba(135, 135, 135, 0.5)"}}
+          >
+            <Modal.Dialog size='lg'>
+              <Modal.Header style={{backgroundColor:"rgba(135, 135, 135)"}} closeButton>
+                <Modal.Title style={{backgroundColor:"rgba(135, 135, 135)"}}>{i.imageName}</Modal.Title>
+              </Modal.Header>
+              <ModalBody>
+                <img src={i.imageSource} style={{height:"100%", width:"100%"}}/>
+              </ModalBody>
+      
+              <Modal.Body>
+                <p>{i.category}</p>
+              </Modal.Body>
+      
+              <Modal.Footer style={{backgroundColor:"rgba(135, 135, 135)"}}>
+                <Button variant="secondary" style={{backgroundColor:"#d63384"}}>Edit</Button>
+                <Button variant="secondary" style={{backgroundColor:"#d63384"}}>Delete</Button>
+              </Modal.Footer>
+            </Modal.Dialog>
+          </div>
+         ))}
+
+</>
+               
           
-//           <input id="Terms" placeholder='terms' type="checkbox" value="checkbox" className="inline" {...register("terms", { required: true })} />
-//           {errors.terms && <span>Debe rellenar este campo</span>}
-//           <label>Acepto los términos y condiciones</label>
-//           </div> */}
+            
+    );
+}
 
-         </fieldset>
-       </fieldset>
-       <div id="buttons">
-       <input onClick={handleAddClick} id="submit" type="submit" value="GUARDAR" />
-       <input id="reset" type="reset" value="LIMPIAR" />
-       </div>
-       <Alert show={showAlert} variant="success" onClose={handleAlertClose} dismissible>
-         <Alert.Heading>Image Uploaded</Alert.Heading>
-         <p>
-           Enjoy your gallery!
-         </p>
-         <hr />
-         <div className="d-flex justify-content-end">
-           <Button onClick={handleAlertClose} variant="outline-success">
-             Cerrar
-           </Button>
-         </div>
-       </Alert>
-     </form>
 
-     </>
+
+
+
+
+
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import ImageHandler from '../Handler/ImageHandler';
+import { Link } from 'react-router-dom';
+import * as React from 'react';
+
+
+
+export default function DetailView() {
+  const {id} = useParams();
+  const [image, setImage] = useState([])
+
+
+  useEffect(() => {
+    async function fetchImage() {
+      const imageData = await ImageHandler.loadImage(id);
+      setImage(imageData);
+    }
+    fetchImage();
+  }, [id]);
+
+
+  
+  // const { imageName, category, imageStatus, source}= image;
+  console.log(image)
+
+  let imageLarge = image;
+
+        return(
+
+          <>
+          
+          {
+            imageLarge.map(i => (
+              <div>{i.imageName}</div>
+            ))
+          }
+           
+
+            </>
+    );
+}

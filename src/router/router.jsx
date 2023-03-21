@@ -4,6 +4,7 @@ import Gallery from "../pages/Gallery";
 import UploadImage from "../pages/UploadImage";
 import EditImage from "../pages/EditImage";
 import ImageHandler from '../handler/ImageHandler';
+import DetailImage from "../pages/DetailImage";
 
 
 export const router = createBrowserRouter([
@@ -25,11 +26,11 @@ export const router = createBrowserRouter([
                         element: <EditImage />,
                         loader: fetchImage,
                     },    
-                    // {
-                    //     path: '/detailview/:',
-                    //     element: <DetailImage />,
-                    //     loader: fetchImage,
-                    // },    
+                    {
+                        path: '/detailview/:id',
+                        element: <DetailImage />,
+                        loader: fetchImage,
+                    },    
                 ]
             },
         ]
