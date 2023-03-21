@@ -6,7 +6,7 @@ import UpLoadForm from '../components/UploadForm';
 const UploadImage = () => { 
     return (
     <>
-    <UpLoadForm />
+        <UpLoadForm />
     </>
     )
 };

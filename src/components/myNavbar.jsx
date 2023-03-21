@@ -20,10 +20,7 @@ function MyNavbar() {
           <Nav.Link href="http://localhost:5173/">Home</Nav.Link>
           <Nav.Link href="http://localhost:5173/gallery">Gallery</Nav.Link>
           <Nav.Link href="http://localhost:5173/uploadImage">Add Image</Nav.Link>
-
-     
-  
-          
+           
           </Nav>
         </Navbar.Collapse>
       </Container>
