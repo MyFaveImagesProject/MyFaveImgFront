@@ -101,7 +101,7 @@ let myImages = images;
                       
                         <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)"}} >
                         
-                        <Card.Img variant="top" src={i.imageSource} style={{marginTop: "0.3125rem", height: "100%"}} />
+                        <Card.Img variant="top" src={i.imageSource} style={{marginTop: "0.3125rem"}} />
                         
                         <Card.Body >
                         <Card.ImgOverlay style={{margin: "-0.625", height:"5%"}}>

@@ -45,7 +45,7 @@ export default function DetailView() {
           >
             <Modal.Dialog size='lg'>
               <Modal.Header style={{backgroundColor:"rgba(135, 135, 135)"}}>
-                <Modal.Title style={{backgroundColor:"rgba(135, 135, 135)"}}>{i.imageName}</Modal.Title>
+                <Modal.Title style={{backgroundColor:"rgba(135, 135, 135)", color: "white"}}>{i.imageName}</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <img src={i.imageSource} style={{height:"100%", width:"100%"}}/>
