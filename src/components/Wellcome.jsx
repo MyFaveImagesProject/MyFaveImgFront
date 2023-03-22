@@ -14,7 +14,7 @@ function Wellcome() {
 
     <div><p>Wellcome to My Favourtie Images. This is a place to sotorage any pictures you find in the Worl Wide Web. <br />
     </p>
-    <Link to={"http://localhost:5173/uploadImage"}><Button variant="outline-dark" size='lg' bg="secondary">Start adding a picture</Button></Link>
+    <Link to={"http://localhost:5173/uploadImage"}><Button variant="outline-dark" size='lg' bg="secondary">Start adding an image</Button></Link>
     </div>
 
     </>
