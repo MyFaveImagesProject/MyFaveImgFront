@@ -72,7 +72,7 @@ const EditForm = () => {
         Submit
       </Button>
 
-      <Link to="/" >
+      <Link to="/gallery" >
       <Button variant='secondary' bg='dark' type="button" value="Back to Gallery" style={{borderRadius:"0.625rem", border:"2px solid #d63384"}}>
         Back to Gallery
       </Button>
