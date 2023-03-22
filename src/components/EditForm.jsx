@@ -68,12 +68,12 @@ const EditForm = () => {
         <Form.Control style={{backgroundColor:"rgba(255, 233, 246, 1)", width:"80%",marginLeft:"10%"}} onChange={handleFieldChange} name="imageSource" defaultValue={updatedImage.imageSource} />
       </Form.Group>
 
-      <Button variant="secondary" type="submit" onClick={handleAddClick}>
+      <Button style={{borderRadius:"0.625rem", border:"2px solid #d63384"}} variant="secondary" type="submit" onClick={handleAddClick}>
         Submit
       </Button>
 
       <Link to="/" >
-      <Button variant='secondary' bg='dark' id="back" type="button" value="Back to Gallery">
+      <Button variant='secondary' bg='dark' type="button" value="Back to Gallery" style={{borderRadius:"0.625rem", border:"2px solid #d63384"}}>
         Back to Gallery
       </Button>
       </Link>
