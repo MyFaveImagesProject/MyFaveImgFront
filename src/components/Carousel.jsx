@@ -23,7 +23,7 @@ const MyCarousel = () => {
     <>
       <Carousel>
         {slideImages.map((i) => (
-          <Carousel.Item style={{ height: "300px", marginTop: "5%" }}>
+          <Carousel.Item style={{ height: "350px", marginTop: "5%" }}>
             <Card.ImgOverlay style={{ margin: "-0.625", height: "5%" }}>
               <Card.Title><h1>Create collections, enjoy the beauty of our world</h1></Card.Title>
               <Card.Title><h1>Share what makes you chill</h1></Card.Title>
