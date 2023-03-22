@@ -44,7 +44,7 @@ function UpLoadForm() {
             <Form.Label htmlFor="id"></Form.Label>
             <Form.Control type="hidden"/>
           </Form.Group>
-    
+          <p>Make sure you fill up every field</p>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label htmlFor="imageName">Title</Form.Label>
             <Form.Control name='imageName' style={{backgroundColor:"rgba(255, 233, 246, 1)",marginLeft:"10%", width:"80%"}} {...register("imageName", { required: true })} />
