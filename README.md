@@ -12,11 +12,11 @@ From each image we can access an enlarged view and the log editor and also delet
 
 <h3>Desktop Views</h3>
  
-![API_p](https://github.com/CeliaGC/Celia_Garcia/blob/main/assets/API_p.png)
+![Group%202.png](https://github.com/MyFaveImagesProject/MyFaveImgFront/blob/main/src/assets/images/Group%202.png)
 
 <h3>Responsive Views</h3>
 
-![API_p](https://github.com/CeliaGC/Celia_Garcia/blob/main/assets/API_p.png)
+![Group%201.png](https://github.com/MyFaveImagesProject/MyFaveImgFront/blob/main/src/assets/images/Group%201.png)
  
 
 <h2>Development</h2>
