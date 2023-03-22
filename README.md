@@ -62,7 +62,9 @@ AspNET.Core Entity Framework 6
 <h2>Install the project</h2>
 
 -Clone projects
+
 https://github.com/MyFaveImagesProject/MyFaveImgFront.git
+
 https://github.com/MyFaveImagesProject/MyFaveImgBack.git
 
 <h3>Back-end</h3>
@@ -91,27 +93,18 @@ In Microsoft Visual Studio Code, to connect to the database, run in Package Nuge
 
 In Visual Studio Code run the command
 - npm i
+
 That should install all the necessary dependencies, but if you have any problems with the installation, these are the commands for each installed dependency
 - npm install
--	
 - npm create vite@latest
--	
 - npm run dev (run in a separate terminal that should not be closed)
--	
 - npm install axios
--	
 - npm i bootstrap@5.3.0-alpha1
--	
 - npm i react-router dom
--	
 - npm instll vite
--	
 - npm install --save-dev vitest
-
 - npm install --save-dev jsdom 
-
 - npm install --save-dev @testing-library/jest-dom
-
 - npm install --save-dev @testing-library/react
 
 
