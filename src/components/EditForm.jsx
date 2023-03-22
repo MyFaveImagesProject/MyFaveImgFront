@@ -65,7 +65,7 @@ const EditForm = () => {
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label htmlFor="imageSource">Image Source</Form.Label>
-        <Form.Control style={{backgroundColor:"rgba(255, 233, 246, 1)", width:"80%",marginLeft:"10%"}} onChange={handleFieldChange} name="imageSource" defaultValue={updatedImage.imageSource} />
+        <Form.Control style={{backgroundColor:"rgba(255, 233, 246, 1)", width:"80%",marginLeft:"10%"}} name="imageSource" value={updatedImage.imageSource} />
       </Form.Group>
 
       <Button style={{borderRadius:"0.625rem", border:"2px solid #d63384"}} variant="secondary" type="submit" onClick={handleAddClick}>
