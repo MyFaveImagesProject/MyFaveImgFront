@@ -44,27 +44,27 @@ function UpLoadForm() {
             <Form.Label htmlFor="id"></Form.Label>
             <Form.Control type="hidden"/>
           </Form.Group>
-          <p>Make sure you fill up every field</p>
+          <p>All fields are mandatory</p>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label htmlFor="imageName">Title</Form.Label>
-            <Form.Control name='imageName' style={{backgroundColor:"rgba(255, 233, 246, 1)",marginLeft:"10%", width:"80%"}} {...register("imageName", { required: true })} />
-         {errors.terms && <span>Debe rellenar este campo</span>}
+            <Form.Control id="imageName" name='imageName' style={{backgroundColor:"rgba(255, 233, 246, 1)",marginLeft:"10%", width:"80%"}} {...register("imageName", { required: true })} />
+         {errors.imageName && <span style={{backgroundColor:"rgba(255, 233, 246, 1)"}}>Mandatory field</span>}
           </Form.Group>
     
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label htmlFor="category">Category</Form.Label>
-                        <select style={{borderRadius:"0.0625rem", backgroundColor:"rgba(255, 233, 246, 1)"}}{...register("category", { required: true })} name="category" >
+                        <select style={{borderRadius:"0.0625rem", backgroundColor:"rgba(255, 233, 246, 1)"}}{...register("category", { required: true })} name="category" id='category' >
                           <option value="nature">Nature</option>
                           <option value="society">Society</option>
                           <option value="science">Science</option>
                         </select>
-                        {errors.terms && <span>Debe rellenar este campo</span>}
+                        {errors.category && <span style={{backgroundColor:"rgba(255, 233, 246, 1)"}}>Mandatory field</span>}
           </Form.Group>
     
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label htmlFor="ImageSource">Image Source</Form.Label>
-            <Form.Control style={{backgroundColor:"rgba(255, 233, 246, 1)", width:"80%",marginLeft:"10%"}} {...register("ImageSource", { required: true })} name="ImageSource" placeholder='URL' onChange={handleImageChange}/>
-            {errors.terms && <span>Debe rellenar este campo</span>}
+            <Form.Control style={{backgroundColor:"rgba(255, 233, 246, 1)", width:"80%",marginLeft:"10%"}} {...register("ImageSource", { required: true })}id="imageSource" name="ImageSource" placeholder='URL' onChange={handleImageChange}/>
+            {errors.ImageSource && <span style={{backgroundColor:"rgba(255, 233, 246, 1)"}}>Mandatory field</span>}
           </Form.Group>
     
           <Button style={{borderRadius:"0.625rem", border:"2px solid #d63384"}} variant="secondary" type="submit" onClick={handleAddClick}>
@@ -83,11 +83,6 @@ function UpLoadForm() {
                        Enjoy your gallery!
                      </p>
                      <hr />
-                     <div className="d-flex justify-content-end">
-                       <Button onClick={handleAlertClose} variant="outline-success">
-                         Close
-                       </Button>
-                     </div>
                      </Alert>
                 </Form>
                 

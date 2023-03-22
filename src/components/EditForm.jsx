@@ -84,11 +84,6 @@ const EditForm = () => {
                    Enjoy your gallery
                  </p>
                  <hr />
-                 <div className="d-flex justify-content-end">
-                   <Button onClick={handleAlertClose} variant="outline-success">
-                     Close
-                   </Button>
-                 </div>
                  </Alert>
             </Form>
 
