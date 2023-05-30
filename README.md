@@ -27,6 +27,7 @@ The data is stored locally in a database in SQL Server Management Studio, which,
 <h2>Stack</h2>
 
 Git Version Control system
+
 Git Hub plattform
 
 <h3>Front-end</h3>
@@ -36,24 +37,32 @@ Visual Studio code
 
 <h4>Lenguages</h4>
 Html
+
 CSS
+
 Javascript
 
 <h4>Libraries</h4>
 React Vite
+
 React Bootstrap
+
 Axios
+
 Reactrouter DOM
+
 React testing Library
 
 <h3>Back-end</h3>
 
 <h4>Tools</h4>
 Microsoft Visual Studio code
+
 Microsoft SQL Server Management Studio 
 
 <h4>Lenguages</h4>
 C#
+
 SQL Languages
 
 <h4>Framework</h4>
