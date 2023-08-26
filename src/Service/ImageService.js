@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-    baseURL: 'https://localhost:7200/',
+    baseURL: ' http://localhost:3000',
     withCredentials: false,
     headers: {
       Accept: 'application/json',
@@ -11,24 +11,24 @@ const apiClient = axios.create({
 
  export const ImageService = {
     async getImages() {
-        let response = await apiClient.get("/Image/GetAll");
+        let response = await apiClient.get("/images");
         let allImages = response.data;
         return allImages;
     },
-    async getImage(id) {
-        let response = await apiClient.get("/Image/GetImageById?id="+ id);
-        let image = response.data;
-        return image;
-    },
-    async submitImage(newImage){
-        await apiClient.post("/Image/Post", newImage)
-    },
-    async deleteImage(id){
-        axios.delete('https://localhost:7200/Image/Delete?Id=' + id)
-    },
-    async updateImage(id, updatedImage){
-        await apiClient.patch("/Image/Patch?=" + id, updatedImage)
-    }
+//     async getImage(id) {
+//         let response = await apiClient.get("/images"+ id);
+//         let image = response.data;
+//         return image;
+//     },
+//     async submitImage(newImage){
+//         await apiClient.post("/images/", newImage)
+//     },
+//     async deleteImage(id){
+//         axios.delete('/images' + id)
+//     },
+//     async updateImage(id, updatedImage){
+//         await apiClient.patch("Images" + id, updatedImage)
+//     }
 }
 
 export default ImageService

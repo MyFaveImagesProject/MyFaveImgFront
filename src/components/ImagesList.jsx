@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import ImageHandler from '../Handler/ImageHandler'
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Col, Row } from 'react-bootstrap';
@@ -10,11 +10,12 @@ import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 
 
 function ImagesList() {
-  const [images, setImages] = useState([]);
+  // const [images, setImages] = useState([]);
   const [searchValues, setSearchValues] = useState([]);
-  const [filteredImages, setFilteredImages] = useState(images);
-
-  useEffect(() => {getData();}, []);
+ 
+  const {images} = useLoaderData();
+ const [filteredImages, setFilteredImages] = useState(images);
+  // useEffect(() => {getData();}, []);
 
   useEffect(() => {
     let filteredImages = images.filter(image => {
@@ -30,10 +31,10 @@ function ImagesList() {
     setFilteredImages(filteredImages);
   }, [images, searchValues]);
 
-  const getData = async () => {
-    const data = await ImageHandler.loadImages();
-    setImages(data);
-  };
+  // const getData = async () => {
+  //   const data = await ImageHandler.loadImages();
+  //   setImages(data);
+  // };
 
   const handleCheckBox = (event) => {
     let searchInput = event.target.value;
@@ -98,11 +99,11 @@ let myImages = images;
                       
                         <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)"}} >
                         
-                        <Card.Img variant="top" src={i.imageSource} style={{marginTop: "0.3125rem"}} />
+                        <Card.Img variant="top" src={i.src} style={{marginTop: "1rem", height:"250px"}} />
                         
                         <Card.Body >
                         <Card.ImgOverlay style={{margin: "-0.625", height:"5%"}}>
-                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.7", fontSize:"100%"}}>{i.imageName}</Card.Title>
+                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.7", fontSize:"100%"}}>{i.name}</Card.Title>
                           </Card.ImgOverlay>
                           </Card.Body>
                          
@@ -159,13 +160,13 @@ let myImages = images;
                       myImages.map(i => (
                       
                       
-                        <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)"}} >
+                        <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)",  height:"250px"}} >
                         
-                        <Card.Img variant="top" src={i.imageSource} style={{marginTop: "0.3125rem", }} />
+                        <Card.Img variant="top" src={i.src} style={{marginTop: "1rem", }} />
                         
                         <Card.Body >
                         <Card.ImgOverlay style={{margin: "-0.625", height:"5%"}}>
-                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.7"}}>{i.imageName}</Card.Title>
+                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.7"}}>{i.name}</Card.Title>
                           </Card.ImgOverlay>
                           </Card.Body>
                          

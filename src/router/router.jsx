@@ -3,7 +3,7 @@ import LayoutPublic from "../layout/LayoutPublic";
 import Gallery from "../pages/Gallery";
 import UploadImage from "../pages/UploadImage";
 import EditImage from "../pages/EditImage";
-import ImageHandler from '../handler/ImageHandler';
+import ImageHandler from "../Handler/ImageHandler";
 import DetailImage from "../pages/DetailImage";
 import Home from "../pages/Home";
 
@@ -18,24 +18,24 @@ export const router = createBrowserRouter([
                         element: <Home />,
                         loader: fetchImages,
                     },
-                    {
-                        path: '/uploadImage',
-                        element: <UploadImage />,
-                    },  
-                    {
-                        path: '/editImage/:imageName',
-                        element: <EditImage />,
-                        loader: fetchImage,
-                    },    
-                    {
-                        path: '/detailview/:id',
-                        element: <DetailImage />,
-                        loader: fetchImage,
-                    },    
+                    // {
+                    //     path: '/uploadImage',
+                    //     element: <UploadImage />,
+                    // },  
+                    // {
+                    //     path: '/editImage/:imageName',
+                    //     element: <EditImage />,
+                    //     loader: fetchImage,
+                    // },    
+                    // {
+                    //     path: '/detailview/:id',
+                    //     element: <DetailImage />,
+                    //     loader: fetchImage,
+                    // },    
                     {
                         path: '/gallery',
                         element: <Gallery />,
-                        loader: fetchImage,
+                        loader: fetchImages,
                     },    
                 ]
             },
