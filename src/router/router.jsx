@@ -6,12 +6,14 @@ import EditImage from "../pages/EditImage";
 import ImageHandler from "../Handler/ImageHandler";
 import DetailImage from "../pages/DetailImage";
 import Home from "../pages/Home";
+// import ErrorPage from "./error-page";
 
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <LayoutPublic />,
+        // errorElement: <ErrorPage />,
         children: [
                     {
                         index: true,
