@@ -29,7 +29,7 @@ const MyCarousel = () => {
               <Card.Title><h1>Share what makes you chill</h1></Card.Title>
               <Card.Title><h1>Treasure little pieces of life </h1></Card.Title>
             </Card.ImgOverlay>
-            <img style={{ opacity: "0.5" }} className="d-block w-100" src={i.imageSource} />
+            <img style={{ opacity: "0.5" }} className="d-block w-100" src={i.src} />
           </Carousel.Item>
         ))}
       </Carousel>

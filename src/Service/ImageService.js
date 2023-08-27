@@ -15,20 +15,20 @@ const apiClient = axios.create({
         let allImages = response.data;
         return allImages;
     },
-//     async getImage(id) {
-//         let response = await apiClient.get("/images"+ id);
-//         let image = response.data;
-//         return image;
-//     },
-//     async submitImage(newImage){
-//         await apiClient.post("/images/", newImage)
-//     },
-//     async deleteImage(id){
-//         axios.delete('/images' + id)
-//     },
-//     async updateImage(id, updatedImage){
-//         await apiClient.patch("Images" + id, updatedImage)
-//     }
+    async getImage(id) {
+        let response = await apiClient.get("/images/"+ id);
+        let image = response.data;
+        return image;
+    },
+    async submitImage(newImage){
+        await apiClient.post("/images/", newImage)
+    },
+    async deleteImage(id){
+        await apiClient.delete('/images/' + id)
+    },
+    async updateImage(id, updatedImage){
+        await apiClient.patch("images/" + id, updatedImage)
+    }
 }
 
 export default ImageService

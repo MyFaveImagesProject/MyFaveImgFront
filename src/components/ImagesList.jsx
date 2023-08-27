@@ -10,10 +10,10 @@ import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 
 
 function ImagesList() {
-  // const [images, setImages] = useState([]);
+  const [imageToDelete, setImageToDelete] = useState([]);
   const [searchValues, setSearchValues] = useState([]);
  
-  const {images} = useLoaderData();
+ const {images} = useLoaderData();
  const [filteredImages, setFilteredImages] = useState(images);
   // useEffect(() => {getData();}, []);
 
@@ -31,10 +31,6 @@ function ImagesList() {
     setFilteredImages(filteredImages);
   }, [images, searchValues]);
 
-  // const getData = async () => {
-  //   const data = await ImageHandler.loadImages();
-  //   setImages(data);
-  // };
 
   const handleCheckBox = (event) => {
     let searchInput = event.target.value;
@@ -53,9 +49,9 @@ let myImages = images;
   console.log(images)
 
   const deleteImage = async (id) => {
-    setImages(images.filter((i) => i.id !== id));
+    setImageToDelete(images.filter((i) => i.id !== id));
     await ImageHandler.deleteImage(id);
-
+    
   };
 
   if(searchValues.length !== 0){
@@ -84,7 +80,7 @@ let myImages = images;
         </Dropdown.Menu>
       </Dropdown>
     </Row>
-    <Row style={{gap: 0.5, flexDirection:"revert" ,justifyContent:'space-evenly', paddingTop:'2.5rem'}} xs={2} md={3} lg={4} className="g-4"> 
+    <Row style={{gap: 0.5, flexDirection:"revert" ,justifyContent:'space-evenly', paddingTop:'2.5rem' }} xs={2} md={3} lg={4} className="g-4"> 
 
 
 
@@ -99,7 +95,7 @@ let myImages = images;
                       
                         <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)"}} >
                         
-                        <Card.Img variant="top" src={i.src} style={{marginTop: "1rem", height:"250px"}} />
+                        <Card.Img variant="top" src={i.src} style={{marginTop: "3%"}} />
                         
                         <Card.Body >
                         <Card.ImgOverlay style={{margin: "-0.625", height:"5%"}}>
@@ -117,9 +113,7 @@ let myImages = images;
                       
                       ))
                     }
-              
-                     
-                  
+
                      </Row> 
                      </>
    )
@@ -160,23 +154,21 @@ let myImages = images;
                       myImages.map(i => (
                       
                       
-                        <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)",  height:"250px"}} >
+                        <Card key={i.id} style={{backgroundColor:"rgba(135, 135, 135, 0.7)"}} >
                         
-                        <Card.Img variant="top" src={i.src} style={{marginTop: "1rem", }} />
+                        <Card.Img variant="top" src={i.src} style={{marginTop: "3%"}} />
                         
                         <Card.Body >
                         <Card.ImgOverlay style={{margin: "-0.625", height:"5%"}}>
-                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.7"}}>{i.name}</Card.Title>
+                          <Card.Title style={{backgroundColor:"rgba(233,236,239,0.7", fontSize:"100%"}}>{i.name}</Card.Title>
                           </Card.ImgOverlay>
                           </Card.Body>
                          
                           <Card.Footer style={{display:"flex", flexDirection:"row",justifyContent:'space-evenly', alignContent:"flex-end"}}>
-                          <Link to={`/detailview/${i.id}`} ><Button variant="outline-dark" size='md'>View</Button></Link>
-                          <Link to={`/editImage/${i.id}`} ><Button variant="outline-dark" size='md'>Edit</Button></Link>
-                          <Button variant="outline-dark" size='md' onClick={()=>deleteImage(i.id)}>Delete</Button>
+                          <Link to={`/editImage/${i.id}`} ><Button variant="outline-dark" size='lg'>Edit</Button></Link>
+                          <Button variant="outline-dark" size='lg' onClick={()=>deleteImage(i.id)}>Delete</Button>
                           </Card.Footer>
                         </Card>
-    
                       
                       
                       ))

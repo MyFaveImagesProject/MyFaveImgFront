@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
-import ImageHandler from '../handler/ImageHandler';
+import ImageHandler from '../Handler/ImageHandler';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
@@ -10,15 +10,6 @@ import { Link } from 'react-router-dom';
 
 function UpLoadForm() {
   const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm();
-
-  const handleImageChange = (event) => {
-    const picture = event.target.input;
-    const reader = new FileReader();
-    reader.readAsDataURL(picture);
-    reader.onload = () => {
-      setValue("imageSource", reader.result);
-    };
-  }
 
   const [showAlert, setShowAlert] = useState(false);
 
@@ -46,9 +37,9 @@ function UpLoadForm() {
           </Form.Group>
           <p>All fields are mandatory</p>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label htmlFor="imageName">Title</Form.Label>
-            <Form.Control id="imageName" name='imageName' style={{backgroundColor:"rgba(255, 233, 246, 1)",marginLeft:"10%", width:"80%"}} {...register("imageName", { required: true })} />
-         {errors.imageName && <span style={{backgroundColor:"rgba(255, 233, 246, 1)"}}>Mandatory field</span>}
+            <Form.Label htmlFor="name">Title</Form.Label>
+            <Form.Control id="name" name='name' style={{backgroundColor:"rgba(255, 233, 246, 1)",marginLeft:"10%", width:"80%"}} {...register("name", { required: true })} />
+         {errors.name && <span style={{backgroundColor:"rgba(255, 233, 246, 1)"}}>Mandatory field</span>}
           </Form.Group>
     
           <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -62,8 +53,8 @@ function UpLoadForm() {
           </Form.Group>
     
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label htmlFor="ImageSource">Image Source</Form.Label>
-            <Form.Control style={{backgroundColor:"rgba(255, 233, 246, 1)", width:"80%",marginLeft:"10%"}} {...register("ImageSource", { required: true })}id="imageSource" name="ImageSource" placeholder='URL' onChange={handleImageChange}/>
+            <Form.Label htmlFor="src">Image Source</Form.Label>
+            <Form.Control style={{backgroundColor:"rgba(255, 233, 246, 1)", width:"80%",marginLeft:"10%"}} {...register("src", { required: true })}id="src" name="src" placeholder='URL' />
             {errors.ImageSource && <span style={{backgroundColor:"rgba(255, 233, 246, 1)"}}>Mandatory field</span>}
           </Form.Group>
     

@@ -18,15 +18,15 @@ export const router = createBrowserRouter([
                         element: <Home />,
                         loader: fetchImages,
                     },
-                    // {
-                    //     path: '/uploadImage',
-                    //     element: <UploadImage />,
-                    // },  
-                    // {
-                    //     path: '/editImage/:imageName',
-                    //     element: <EditImage />,
-                    //     loader: fetchImage,
-                    // },    
+                    {
+                        path: '/uploadImage',
+                        element: <UploadImage />,
+                    },  
+                    {
+                        path: '/editImage/:id',
+                        element: <EditImage />,
+                        loader: fetchImage,
+                    },    
                     // {
                     //     path: '/detailview/:id',
                     //     element: <DetailImage />,
@@ -48,6 +48,6 @@ async function fetchImages() {
 }
 
 async function fetchImage({ params }) {
-    const image = await ImageHandler.loadImage(params. imageName);
+    const image = await ImageHandler.loadImage(params.id);
     return { image };
 }
