@@ -2,14 +2,17 @@
 
 import * as React from 'react';
 import { useState, useEffect } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { useParams, Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ImageHandler from '../Handler/ImageHandler';
 
 export default function DetailView() {
+
   const { id } = useParams();
-  const [image, setImage] = useState([]);
+  // const {images} = useLoaderData();
+  const [image, setImage] = useState([])
 
   useEffect(() => {
     async function fetchImage() {
@@ -17,15 +20,15 @@ export default function DetailView() {
       setImage(imageData);
     }
     fetchImage();
-  }, [id]);
+  });
 
-  const deleteImage = async (id) => {
-    setImage(image.filter((i) => i.id !== id));
-    await ImageHandler.deleteImage(id);
-  };
+  const imageLarge = [image];
+  // const deleteImage = async (id) => {
+  //   setImage(images.filter((i) => i.id !== id));
+  //   await ImageHandler.deleteImage(id);
+  // };
 
 
-  let imageLarge = image;
 
   return (
     <>
@@ -36,10 +39,10 @@ export default function DetailView() {
         >
           <Modal.Dialog size='lg'>
             <Modal.Header style={{ backgroundColor: "rgba(135, 135, 135)" }}>
-              <Modal.Title style={{ backgroundColor: "rgba(135, 135, 135)", color: "white" }}>{i.imageName}</Modal.Title>
+              <Modal.Title style={{ backgroundColor: "rgba(135, 135, 135)", color: "white" }}>{i.name}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <img src={i.imageSource} style={{ height: "100%", width: "100%" }} />
+              <img src={i.src} style={{ height: "100%", width: "100%" }} />
             </Modal.Body>
 
             <Modal.Body>

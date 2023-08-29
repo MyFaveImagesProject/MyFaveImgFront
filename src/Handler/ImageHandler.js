@@ -35,15 +35,7 @@ export const ImageHandler = {
         }
 
         return ImageService.updateImage(id, updatedImageStructure);
-    },
-    // async fetchImages() {
-    //     const images = await ImageHandler.loadImages();
-    //     return { images };
-    // },
-    // async fetchImage({ params }) {
-    //     const image = await ImageHandler.loadImage(params. name);
-    //     return { image };
-    // },
+    }
 }
 
 export default ImageHandler
