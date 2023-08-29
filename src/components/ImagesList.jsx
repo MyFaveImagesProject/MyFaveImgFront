@@ -10,12 +10,10 @@ import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 
 
 function ImagesList() {
-  const [imageToDelete, setImageToDelete] = useState([]);
-  const [searchValues, setSearchValues] = useState([]);
- 
+ const [imageToDelete, setImageToDelete] = useState([]);
+ const [searchValues, setSearchValues] = useState([]);
  const {images} = useLoaderData();
  const [filteredImages, setFilteredImages] = useState(images);
-  // useEffect(() => {getData();}, []);
 
   useEffect(() => {
     let filteredImages = images.filter(image => {
@@ -44,9 +42,6 @@ function ImagesList() {
     }
   }
 let myImages = images;
-  
-  console.log(filteredImages)
-  console.log(images)
 
   const deleteImage = async (id) => {
     setImageToDelete(images.filter((i) => i.id !== id));
