@@ -1,18 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import LayoutPublic from "../layout/LayoutPublic";
 import Gallery from "../pages/Gallery";
 import UploadImage from "../pages/UploadImage";
 import EditImage from "../pages/EditImage";
 import ImageHandler from "../Handler/ImageHandler";
 import DetailImage from "../pages/DetailImage";
 import Home from "../pages/Home";
+import Root from "./Root";
 // import ErrorPage from "./error-page";
 
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <LayoutPublic />,
+        element: <Root />,
         // errorElement: <ErrorPage />,
         children: [
                     {

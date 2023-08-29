@@ -6,7 +6,7 @@ import { Navbar } from 'react-bootstrap';
 
 
 
-function Footer() {
+function MyFooter() {
   return (
     <>
 
@@ -33,4 +33,4 @@ function Footer() {
   );
 }
 
-export default Footer
+export default MyFooter

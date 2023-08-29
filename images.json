@@ -1,16 +1,40 @@
 {
   "images": [
     {
-      "id": 0,
-      "name": "Study hard lil boy",
-      "src": "https://camo.githubusercontent.com/0bb49ba4c43035a250fc5a06b76c6489d5651889fb6aed9488078d4ce7745fa0/68747470733a2f2f64323078316e707461766b7477302e636c6f756466726f6e742e6e65742f776f726470726573735f6d656469612f323032322f30332f426c6f672d496d6167652d35302d373530783533362e6a7067",
-      "category": "society"
-    },
-    {
       "id": 2,
       "name": "Holi. True colors",
       "src": "https://camo.githubusercontent.com/22460cdde3050921ab893220b5fbc716d558ce6ec95da79ed7d17b6a5e383738/68747470733a2f2f7374617469632e64772e636f6d2f696d6167652f36343839393237315f3330332e6a7067",
       "category": "society"
+    },
+    {
+      "name": "Interstellar kindergarten",
+      "category": "nature",
+      "src": "https://www.elcorreogallego.es/binrepository/900x521/0c8/900d506/none/102922340/UYEP/fburwf8waaiiyx1_422-5977176_20220906203411.jpg",
+      "id": 3
+    },
+    {
+      "name": "Give the streets back to children",
+      "category": "society",
+      "src": "https://camo.githubusercontent.com/c968e6da377ddfd725c456b517ee106aba3bc26592051320ca85c2fe5fec25fb/68747470733a2f2f6d656469612e6973746f636b70686f746f2e636f6d2f69642f313237313334343137322f65732f666f746f2f677275706f2d64652d6e692543332542316f732d646976697274692543332541396e646f73652d6a7567616e646f2d616c2d686f7073636f7463682d656e2d6c612d63616c6c652e6a70673f733d3631327836313226773d30266b3d323026633d755035424e775667316c64797a54554a3062464f44536b733839796766387571487238386a366d376c31733d",
+      "id": 4
+    },
+    {
+      "name": "Study hard lil boy",
+      "category": "society",
+      "src": "https://camo.githubusercontent.com/0bb49ba4c43035a250fc5a06b76c6489d5651889fb6aed9488078d4ce7745fa0/68747470733a2f2f64323078316e707461766b7477302e636c6f756466726f6e742e6e65742f776f726470726573735f6d656469612f323032322f30332f426c6f672d496d6167652d35302d373530783533362e6a7067",
+      "id": 5
+    },
+    {
+      "name": "Old trustable Ginkgo",
+      "category": "nature",
+      "src": "https://camo.githubusercontent.com/00e269dbe2a5cc6b462f2bbeabf98ee9c7289820de23c9064ec5bfc78d002489/68747470733a2f2f626c6f672e736f696e2d65742d6e61747572652e636f6d2f6170702f75706c6f6164732f323032312f30382f47696e6b676f2d62696c6f62612e6a7067",
+      "id": 6
+    },
+    {
+      "name": "Homebody bees",
+      "category": "nature",
+      "src": "https://www.pestworldforkids.org/media/bonlpgrh/2022_720x480headers_0006_small_bee-honeycomb.jpg?preset=fullWidth968",
+      "id": 7
     }
   ]
 }
