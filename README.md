@@ -4,6 +4,8 @@ Es como una capa más en el viaje de los datos desde el archivo json hasta el fr
 
 COMPONENTE >>llama a>> HANDLER >>llama a> SERVICE >>llama a>> archivo.JSON
 
+Con este loader sería:
+
 COMPONENTE (useLoaderData) >>llama a>> LOADER (en router) >>llama a>> HANDLER >>llama a>> SERVICE >>llama a>> archivo.JSON
 
 
